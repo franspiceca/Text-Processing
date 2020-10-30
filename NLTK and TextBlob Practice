@@ -19,3 +19,15 @@ tagged_tokens
 
 ##new list of the verbs in tagged_tokens
 [token for token, tag in tagged_tokens if tag in ['VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ']]
+
+##new list of the polarities of the sentences in text
+[TextBlob(sent).sentiment.polarity for sent in sents]
+
+##new list of the subjectivities of the sentences in text
+[TextBlob(sent).sentiment.subjectivity for sent in sents]
+
+##new list of the Chinese sentences translated from the sentences in text
+[TextBlob(sent).translate(to="zh-CN").string for sent in sents]
+
+##new list of the detected languages of the sentences in text
+[TextBlob(sent).detect_language() for sent in sents]
