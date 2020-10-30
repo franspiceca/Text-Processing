@@ -1,0 +1,21 @@
+##Defining my text to analyze
+text = "When our Country had no debt and built everything from Highways to the Military with CASH, we had a big system of Tariffs. Now we allow other countries to steal our wealth, treasure, and jobs - But no more! The USA is doing great, with unlimited upside into the future!"
+text
+
+##list sents of sentences in text
+sents = nltk.sent_tokenize(text)
+sents
+
+##list tokens of words in text
+tokens = nltk.word_tokenize(text)
+tokens
+
+##list tagged_tokens of tagged tokens in text (tagged with part of speech)
+tagged_tokens = nltk.pos_tag(tokens)
+tagged_tokens
+
+##new list of the nouns in tagged_tokens
+[token for token, tag in tagged_tokens if tag == 'NN']
+
+##new list of the verbs in tagged_tokens
+[token for token, tag in tagged_tokens if tag in ['VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ']]
